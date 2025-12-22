@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import mach, fuel_range, lift_drag, mission_planner
+from app.routers import mach, fuel_range, lift_drag, mission_planner,ask
 
 app = FastAPI(
     title="ISA Master Tool API",
@@ -63,3 +63,4 @@ app.include_router(mach.router, prefix="/api")
 app.include_router(fuel_range.router, prefix="/api")
 app.include_router(lift_drag.router, prefix="/api")
 app.include_router(mission_planner.router, prefix="/api")
+app.include_router(ask.router, prefix="/api")
