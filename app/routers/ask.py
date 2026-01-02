@@ -13,7 +13,7 @@ class AskRequest(BaseModel):
     question: str
 
 
-@router.post("")
+@router.post("/")
 def ask(req: AskRequest):
     q = (req.question or "").strip()
     if not q:
